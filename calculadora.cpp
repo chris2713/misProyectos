@@ -36,6 +36,9 @@ public:
 	inline void restar() const;
 	inline void multiplicar() const;
 	inline void dividir() const;
+	inline void raiz() const;
+	inline void potencia() const;
+	inline void logaritmo() const;
 	
 	
 	obj() {
@@ -50,7 +53,16 @@ public:
 				else
 					if (answer == 4)
 						dividir();
+						else
+						if (answer == 5)
+							raiz();
+						else
+							if (answer == 6)
+								potencia();
+							else
+								logaritmo();
 	}
+	
 	
 	
 		~obj() {/*...*/ }
@@ -158,6 +170,43 @@ inline void obj::dividir() const {
 	cin.get();
 	system("cls");
 }
+inline void obj::raiz() const {
+	double resultado;
+	double valor;
+	cout << "Introduce un numero : ";
+	cin >> valor;
+	cin.ignore();
+	resultado = sqrt(valor);
+	cout << "El resultado de la operacion es " << resultado;
+	cin.get();
+	system("cls");
+}
+ 
+ 
+inline void obj::potencia() const {
+	double base;
+	int exponente;
+	cout << "Introduce la base y el exponente : ";
+	cin >> base >> exponente;
+	cin.ignore();
+	double resultado = pow(base, exponente);
+	cout << "\t\aEl resultado es : " << resultado << endl;
+	cin.get();
+	system("cls");
+}
+ 
+ 
+inline void obj::logaritmo() const {
+	double argumento;
+	cout << "Introduce el argumento para el logaritmo de base 10: ";
+	cin >> argumento;
+	cin.ignore();
+    double resultado = log10(argumento);
+	cout << "\t\aEl resultado del logaritmo en base 10 de " << argumento << " es : " << resultado;
+	cin.get();
+	system("cls");
+}
+ 
 
 int main(void)
 {
@@ -188,6 +237,9 @@ int main(void)
 			cout << "\t2- RESTA" << endl;
 			cout << "\t3- PRODUCTO" << endl;
 			cout << "\t4- COCIENTE" << endl;
+			cout << "\t5- RAIZ CUADRADA" << endl;
+			cout << "\t6- EXPONENTE" << endl;
+			cout << "\t7- LOGARITMO" << endl;
 				cout << endl << "\t\tSELECCION: ";
 			cin >> respuesta;
 			cin.ignore();
